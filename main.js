@@ -74,11 +74,39 @@ function buildProfile(profileData) {
     repo2.innerText = "repo #2"
     repo3.innerText = "repo #3"
     repoElement.appendChild(repo1)
-    repoElement.appendChild(repo2)
-    repoElement.appendChild(repo3)
+    // repoElement.appendChild(repo2)
+    // repoElement.appendChild(repo3)
+    // is there a way to do this all in one? as in repo.Element.appendChild(repo1,repo2,repo3)
 
 }
 
-// TODO: Resize image by resizing divs?
+let repoUrl = "https://api.github.com/users/lisaismyname0/repos"
+// do we need to do a separate fetch request for this? no because the personal information is in the repo information & technically less API requests means faster but it might be easier to do it separately 
+
 // can trigger the fetch with an event listener
+
+function buildProfile(profileData) {
+    profileData.map(function (repo) {
+        profile.appendChild(buildRepoElement(repo.name))
+    })
+}
+
+// ^ when profileData is linked to the repos, this cycles through the list of repos and returns only the information asked for... this is also in map format which is a more streamlined way of writing this loop:
+
+// function buildProfileLoop(profileData) {
+//     // same as above but using loops instead
+//     let elements = []
+//     for (let repo of profileData) {
+//         profile.appendChild(buildRepoElement(repo.name))
+//     }
+// }
+
+// function buildRepoElement(name) {
+//     let el = document.createElement("p")
+//     el.innerText = name
+//     return el
+// returns new element for a repo, like a customer
+// }
+
+// Think about streamlining functions with map instead of appendChild()
 
