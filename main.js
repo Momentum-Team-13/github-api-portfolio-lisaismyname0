@@ -19,7 +19,6 @@ fetch(gitHubUrl, {
         buildProfile(data);
         // let profileData = data
 
-        // buildRepo(data);
     })
 
 function buildProfile(profileData) {
@@ -58,6 +57,9 @@ function buildProfile(profileData) {
     userNameElement.classList.add("username")
     userNameElement.innerText = `GitHub Username: ${profileData.login}`
     nameElement.appendChild(userNameElement)
+
+    let newElement = document.querySelector(".repos")
+    profileElement.appendChild(newElement)
 }
 
 let repoUrl = "https://api.github.com/users/lisaismyname0/repos"
@@ -83,41 +85,8 @@ function buildRepo(repoData) {
         console.log(repoInfo)
     }
 }
-// separate element for repos
-// repoElement.innerText = "Repositories"
-// containerElement.appendChild(repoElement)
-// buildRepo(data)
 
-// function buildRepos(profile)
-
-// let repo1 = document.createElement("li")
-// repo1.innerText = "repo #1"
-// let repo2 = document.createElement("li")
-// let repo3 = document.createElement("li")
-// repo2.innerText = "repo #2"
-// repo3.innerText = "repo #3"
-// repoElement.appendChild(repo1)
-// repoElement.appendChild(repo2)
-// repoElement.appendChild(repo3)
-// is there a way to do this all in one? as in repo.Element.appendChild(repo1,repo2,repo3) look into append()
-
-// can trigger the fetch with an event listener
-
-// function buildProfile(profileData) {
-//     profileData.map(function (repo) {
-//         profile.appendChild(buildRepoElement(repo.name))
-//     })
-// }
-
-// ^ when profileData is linked to the repos, this cycles through the list of repos and returns only the information asked for... this is also in map format which is a more streamlined way of writing this loop:
-
-// function buildProfileLoop(profileData) {
-//     // same as above but using loops instead
-//     let elements = []
-//     for (let repo of profileData) {
-//         profile.appendChild(buildRepoElement(repo.name))
-//     }
-// }
-
-
+// TODO
 // Think about streamlining functions with map instead of loops
+// fix LinkedIn hyperlink
+// add hyperlinks for repos
