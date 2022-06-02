@@ -28,6 +28,7 @@ function buildProfile(profileData) {
     console.log(profileData)
     let containerElement = document.querySelector(".box")
     let profileElement = document.createElement("div")
+    profileElement.classList.add("container")
     containerElement.appendChild(profileElement)
 
     let imageElement = document.createElement("img")
@@ -41,21 +42,43 @@ function buildProfile(profileData) {
 
     let bioElement = document.createElement("p")
     bioElement.classList.add("bio")
-    bioElement.innerText = `${profileData.bio}`
-    profileElement.appendChild(bioElement)
+    bioElement.innerText = `Bio: ${profileData.bio}`
+    nameElement.appendChild(bioElement)
 
     let siteElement = document.createElement("a")
     link = document.createTextNode("Lisa's LinkedIn"
     );
     siteElement.appendChild(link)
     siteElement.title = ("Lisa's LinkedIn")
-    siteElement.href = `${profileData.blog}`
+    siteElement.href = profileData.blog
     console.log(`${profileData.blog}`)
     siteElement.classList.add("site")
-    profileElement.appendChild(siteElement)
+    nameElement.appendChild(siteElement)
+    // link doesn't work...
+
+    let userNameElement = document.createElement("p")
+    userNameElement.classList.add("username")
+    userNameElement.innerText = `GitHub Username: ${profileData.login}`
+    nameElement.appendChild(userNameElement)
+
+    // separate element for repos
+    let repoElement = document.createElement("p")
+    repoElement.classList.add("repos")
+    repoElement.innerText = "Repositories"
+    containerElement.appendChild(repoElement)
+
+    let repo1 = document.createElement("li")
+    repo1.innerText = "repo #1"
+    let repo2 = document.createElement("li")
+    let repo3 = document.createElement("li")
+    repo2.innerText = "repo #2"
+    repo3.innerText = "repo #3"
+    repoElement.appendChild(repo1)
+    repoElement.appendChild(repo2)
+    repoElement.appendChild(repo3)
+
 }
 
 // TODO: Resize image by resizing divs?
 // can trigger the fetch with an event listener
-
 
