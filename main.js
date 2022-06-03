@@ -79,10 +79,10 @@ function buildRepo(repoData) {
         const repoDiv = document.createElement("div")
         repoInfo.appendChild(repoDiv)
         const repoElement = document.createElement("a")
-        let link = document.createTextNode(`${repo.html_url}`)
         repoElement.href = `${repo.html_url}`
-        repoElement.appendChild(link)
-        // repoElement.innerText = `${repo.html_url}`
+        // let link = document.createTextNode(`${repo.html_url}`)
+        // repoElement.appendChild(link)
+        repoElement.innerText = `${repo.name}`
         repoInfo.appendChild(repoElement)
     }
 }
