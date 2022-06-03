@@ -47,7 +47,7 @@ function buildProfile(profileData) {
     );
     siteElement.appendChild(link)
     siteElement.title = ("Lisa's LinkedIn")
-    siteElement.href = profileData.blog
+    siteElement.href = "www.linkedin.com/in/lisa-williams-4596b121a"
     console.log(`${profileData.blog}`)
     siteElement.classList.add("site")
     nameElement.appendChild(siteElement)
@@ -59,7 +59,6 @@ function buildProfile(profileData) {
     nameElement.appendChild(userNameElement)
 
     let newElement = document.querySelector(".repos")
-    profileElement.appendChild(newElement)
 }
 
 let repoUrl = "https://api.github.com/users/lisaismyname0/repos"
@@ -79,14 +78,18 @@ fetch(repoUrl, {
 function buildRepo(repoData) {
     for (let repo of repoData) {
         const repoInfo = document.querySelector(".repos")
-        const repoElement = document.createElement("div")
-        repoElement.innerText = `${repo.name}`
+        const repoDiv = document.createElement("div")
+        repoInfo.appendChild(repoDiv)
+        const repoElement = document.createElement("a")
+        let link = document.createTextNode(`${repo.html_url}`)
+        repoElement.href = `${repo.html_url}`
+        repoElement.appendChild(link)
+        // repoElement.innerText = `${repo.html_url}`
         repoInfo.appendChild(repoElement)
-        console.log(repoInfo)
     }
 }
 
 // TODO
 // Think about streamlining functions with map instead of loops
 // fix LinkedIn hyperlink
-// add hyperlinks for repos
+// fix hyperlinks for repos
