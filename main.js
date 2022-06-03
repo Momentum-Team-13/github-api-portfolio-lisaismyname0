@@ -43,10 +43,8 @@ function buildProfile(profileData) {
     nameElement.appendChild(bioElement)
 
     let siteElement = document.createElement("a")
-    link = document.createTextNode("Lisa's LinkedIn"
-    );
+    link = document.createTextNode("LinkedIn")
     siteElement.appendChild(link)
-    siteElement.title = ("Lisa's LinkedIn")
     siteElement.href = "www.linkedin.com/in/lisa-williams-4596b121a"
     console.log(`${profileData.blog}`)
     siteElement.classList.add("site")
