@@ -1,29 +1,36 @@
 * {
     box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .box {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: inline-flex;
     flex-direction: column;
 }
 
 
 img {
-    width: 250px;
+    width: 200px;
     border-radius: 50%;
 }
 
 .container {
     display: flex;
     flex-direction: row;
+    box-sizing: border-box;
 }
 
-.name {
-    border: 2px solid black;
+.nameBar {
+    font-size: larger;
+    font-weight: bolder;
 }
 
 .repos {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width: 400px;
+}
+
+.header {
+    border: 2px solid black;
 }

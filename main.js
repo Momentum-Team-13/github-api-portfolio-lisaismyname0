@@ -28,33 +28,35 @@ function buildProfile(profileData) {
     profileElement.classList.add("container")
     containerElement.appendChild(profileElement)
 
+
     let imageElement = document.createElement("img")
     imageElement.src = "https://avatars.githubusercontent.com/u/105607130?v=4"
     profileElement.appendChild(imageElement)
 
+
     let nameElement = document.createElement("p")
     nameElement.classList.add("name")
-    nameElement.innerText = `${profileData.name}`
+    // nameElement.innerText = `${profileData.name}`
     profileElement.appendChild(nameElement)
+
 
     let bioElement = document.createElement("p")
     bioElement.classList.add("bio")
-    bioElement.innerText = `Bio: ${profileData.bio}`
+    bioElement.innerText = `${profileData.bio}`
     nameElement.appendChild(bioElement)
-
-    let siteElement = document.createElement("a")
-    link = document.createTextNode("LinkedIn")
-    siteElement.appendChild(link)
-    siteElement.href = "www.linkedin.com/in/lisa-williams-4596b121a"
-    console.log(`${profileData.blog}`)
-    siteElement.classList.add("site")
-    nameElement.appendChild(siteElement)
-    // link doesn't work...
 
     let userNameElement = document.createElement("p")
     userNameElement.classList.add("username")
     userNameElement.innerText = `GitHub Username: ${profileData.login}`
     nameElement.appendChild(userNameElement)
+
+    let siteElement = document.createElement("a")
+    siteElement.href = `${profileData.blog}`;
+    siteElement.innerText = "My LinkedIn"
+    siteElement.classList.add("site")
+    nameElement.appendChild(siteElement)
+    console.log(`${profileData.blog}`)
+    // link doesn't work...
 
     let newElement = document.querySelector(".repos")
 }
@@ -80,9 +82,7 @@ function buildRepo(repoData) {
         repoInfo.appendChild(repoDiv)
         const repoElement = document.createElement("a")
         repoElement.href = `${repo.html_url}`
-        // let link = document.createTextNode(`${repo.html_url}`)
-        // repoElement.appendChild(link)
-        repoElement.innerText = `${repo.name}`
+        repoElement.innerText = "-" + `${repo.name}`
         repoInfo.appendChild(repoElement)
     }
 }
