@@ -49,13 +49,17 @@ function buildProfile(profileData) {
     userNameElement.innerText = `GitHub Username: ${profileData.login}`
     profileElement.appendChild(userNameElement)
 
+    let urlElement = document.createElement("a");
+    urlElement.href = `${profileData.html_url}`
+    urlElement.innerText = "My GitHub"
+    urlElement.classList.add("url")
+    profileElement.appendChild(urlElement)
+
     let siteElement = document.createElement("a")
     siteElement.href = `https://${profileData.blog}`;
     siteElement.innerText = "My LinkedIn"
     siteElement.classList.add("site")
     profileElement.appendChild(siteElement)
-    console.log(`${profileData.blog}`)
-    // link doesn't work...
 
     let newElement = document.querySelector(".repos")
     containerElement.appendChild(newElement)
@@ -90,5 +94,3 @@ function buildRepo(repoData) {
 
 // TODO
 // Think about streamlining functions with map instead of loops
-// fix LinkedIn hyperlink
-// fix hyperlinks for repos
