@@ -50,7 +50,7 @@ function buildProfile(profileData) {
     profileElement.appendChild(userNameElement)
 
     let siteElement = document.createElement("a")
-    siteElement.href = `${profileData.blog}`;
+    siteElement.href = `https://${profileData.blog}`;
     siteElement.innerText = "My LinkedIn"
     siteElement.classList.add("site")
     profileElement.appendChild(siteElement)
