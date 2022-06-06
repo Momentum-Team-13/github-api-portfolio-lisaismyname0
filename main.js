@@ -33,32 +33,33 @@ function buildProfile(profileData) {
     imageElement.src = "https://avatars.githubusercontent.com/u/105607130?v=4"
     profileElement.appendChild(imageElement)
 
-
-    let nameElement = document.createElement("p")
-    nameElement.classList.add("name")
-    // nameElement.innerText = `${profileData.name}`
-    profileElement.appendChild(nameElement)
+    let headerElement = document.getElementsByClassName("header")
+    let nameElement = document.getElementById("nameBar")
+    nameElement.innerText = `${profileData.name}`
+    // headerElement.appendChild(nameElement)
 
 
     let bioElement = document.createElement("p")
     bioElement.classList.add("bio")
     bioElement.innerText = `${profileData.bio}`
-    nameElement.appendChild(bioElement)
+    profileElement.appendChild(bioElement)
 
     let userNameElement = document.createElement("p")
     userNameElement.classList.add("username")
     userNameElement.innerText = `GitHub Username: ${profileData.login}`
-    nameElement.appendChild(userNameElement)
+    profileElement.appendChild(userNameElement)
 
     let siteElement = document.createElement("a")
     siteElement.href = `${profileData.blog}`;
     siteElement.innerText = "My LinkedIn"
     siteElement.classList.add("site")
-    nameElement.appendChild(siteElement)
+    profileElement.appendChild(siteElement)
     console.log(`${profileData.blog}`)
     // link doesn't work...
 
     let newElement = document.querySelector(".repos")
+    containerElement.appendChild(newElement)
+
 }
 
 let repoUrl = "https://api.github.com/users/lisaismyname0/repos"

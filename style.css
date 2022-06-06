@@ -4,9 +4,8 @@
 }
 
 .box {
-    /* border: 2px solid black; */
-    display: inline-flex;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
 }
 
 
@@ -17,20 +16,15 @@ img {
 
 .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     box-sizing: border-box;
 }
 
-.nameBar {
+#nameBar {
     font-size: larger;
     font-weight: bolder;
 }
 
 .repos {
-    /* border: 2px solid black; */
     width: 400px;
-}
-
-.header {
-    border: 2px solid black;
 }
